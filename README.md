@@ -20,6 +20,7 @@ This extension enhances the capabilities of Stable Diffusion Automatic1111 by ad
     - Download model files directly from the extension.
     - Progress bar in the console for download status.
     - Models saved in relevant directories (e.g., LORA in 'lora' directory, Checkpoint in 'Stable-diffusion' directory).
+    - AestheticGradient and Poses saved into common_files dir that will be auto created.
 
 3. **View Model Details:**
     - Easily navigate to the civitai website to view detailed information about the selected model.

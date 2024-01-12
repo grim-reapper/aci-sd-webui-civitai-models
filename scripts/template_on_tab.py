@@ -2,7 +2,7 @@ import modules.scripts as scripts
 import gradio as gr
 import os
 import requests
-from constants import EXTENSION_NAME, API_URL, MAX_RETRIES, BACKOFF_FACTOR, API_MODEL_ENDPOINT, MODEL_URL
+from constants import EXTENSION_NAME, API_URL, MAX_RETRIES, BACKOFF_FACTOR, API_MODEL_ENDPOINT, MODEL_URL, COMMON_PATH
 from modules import script_callbacks
 from scripts import downloader, util
 from modules import shared
@@ -10,6 +10,9 @@ from pathlib import Path
 
 lora_dir = Path(shared.cmd_opts.lora_dir).resolve()
 base_dir = Path(shared.data_path).resolve()
+
+if not os.path.exists(os.path.join(base_dir, COMMON_PATH)):
+    os.makedirs(os.path.join(base_dir, COMMON_PATH))
 
 def on_ui_tabs():
     with gr.Blocks(analytics_enabled=False) as ui_component:

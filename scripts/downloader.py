@@ -5,7 +5,7 @@ from modules import shared
 from scripts import util
 from pathlib import Path
 from tqdm import tqdm
-
+from constants import COMMON_PATH
 lora_dir = Path(shared.cmd_opts.lora_dir).resolve()
 base_dir = Path(shared.data_path).resolve()
 
@@ -25,8 +25,12 @@ def dl(url, folder, filename, filepath, model_type):
         # if file_path is not in parameter, then folder must be in parameter
         if not folder:
             # get folder path by model type e.g lora
-            if 'LORA' == model_type or 'Poses' == model_type or 'AestheticGradient' == model_type:
+            if 'LORA' == model_type:
                 folder = lora_dir
+            elif 'Poses' == model_type:
+                folder = os.path.join(base_dir, COMMON_PATH)
+            elif 'AestheticGradient' == model_type:
+                folder = os.path.join(base_dir, COMMON_PATH)
             elif 'Checkpoint' == model_type:
                 folder = os.path.join(base_dir, "models/Stable-diffusion")
             elif 'Hypernetwork' == model_type:
