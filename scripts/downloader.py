@@ -127,7 +127,7 @@ def dl(url, folder, filename, filepath, model_type):
                 speed = downloaded_size / (1024 * 1024)
                 progress = int(50 * downloaded_size / total_size)
                 sys.stdout.reconfigure(encoding='utf-8')
-                sys.stdout.write(f"\r{file_size} / {speed:.2f} [{('-' * progress) + (' ' * (50 - progress))}] {100 * downloaded_size / total_size:.0f}%")
+                sys.stdout.write(f"\r{file_size} / {util.convert_bytes(downloaded_size)} [{('-' * progress) + (' ' * (50 - progress))}] {100 * downloaded_size / total_size:.0f}%")
                 sys.stdout.flush()
 
     print()

@@ -115,12 +115,25 @@ def pagination(items):
         """
     return ""
 def generate_card(item):
+    src_type = ''
+    if len(item['modelVersions'][0]["images"]):
+        if item['modelVersions'][0]["images"][0]['type'] == 'video':
+            src_type = f"""
+                <video playsinline loop autoplay style="width:100%"><source src="{item['modelVersions'][0]["images"][0]["url"]}" type="video/mp4"></video>
+            """
+        else:
+            src_type = f"""
+                <img src="{item['modelVersions'][0]["images"][0]["url"]}" style="width:100%">
+            """
+    else:
+        src_type = f"""<img src="https://media.istockphoto.com/vectors/no-thumbnail-image-vector-graphic-vector-id1147544810?k=6&m=1147544810&s=612x612&w=0&h=LLdG9L4tfdum-uXqfrsw6VGkmQkw2Y_BnL9bYGczsfk=" style="width:100%">"""
+
     return f"""
         <div class="card">
             <div class="gr_card_root">
             <div class="gr_wrapper">
                 <div class="gr_model_type">{item['type']}</div>
-                <img src="{item['modelVersions'][0]["images"][0]["url"] if len(item['modelVersions'][0]["images"]) else 'https://media.istockphoto.com/vectors/no-thumbnail-image-vector-graphic-vector-id1147544810?k=6&m=1147544810&s=612x612&w=0&h=LLdG9L4tfdum-uXqfrsw6VGkmQkw2Y_BnL9bYGczsfk='}" alt="Image" style="width:100%">
+                {src_type}
                 <div class="container">
                     <h4><b>{item["name"]}</b></h4>
                     <div class="gr-action-btn">
