@@ -1,5 +1,5 @@
 EXTENSION_NAME = "Civitai Models"
-VERSION = "1.0.0"
+VERSION = "1.1.0"
 API_URL="https://civitai.com/api/v1/models"
 MODEL_URL="https://civitai.com/models"
 API_MODEL_ENDPOINT = "https://civitai.com/api/download/models"

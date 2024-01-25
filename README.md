@@ -3,7 +3,7 @@
 
 ## Overview
 
-This extension enhances the capabilities of Stable Diffusion Automatic1111 by adding features to interact with various models from the "civitai" website. It includes functionalities like viewing model details, downloading model files directly from the extension with a progress bar, and settings customization.
+This extension enhances the capabilities of Stable Diffusion Automatic1111 by adding features to interact with various models from the "civitai" website. It includes functionalities like viewing model details, downloading model files directly from the extension with a progress bar,settings customization, and prompt generator.
 
 ## Features
 
@@ -15,6 +15,7 @@ This extension enhances the capabilities of Stable Diffusion Automatic1111 by ad
     - LORA
     - Controlnet
     - Poses
+    - Prompt Generator
 
 2. **Download Model:**
     - Download model files directly from the extension.
@@ -70,20 +71,15 @@ Here is a simple tutorial:
 * Copy the api key string, paste to this extension's setting page -> Civitai API Key section.
 * Save setting and Reload SD webui
 
-## Example Configuration:
-
-```text
-  "proxy": "http://yourproxy.com",
-  "civitaiApiKey": "your_civitai_api_key",
-  "savePath": "/path/to/save/models"
-```
 ## Screenshots
-Setting
+### Setting
 ![Civitai Model settings](images/settings.jpeg?raw=true "Civitai Model settings")
-Civitai Model tab <small>(as you click on model tab it will load model, so wait for few seconds)</small>
+### Civitai Model tab <small>(as you click on model tab it will load model, so wait for few seconds)</small>
 ![Civitai Model tab](images/tab.jpeg?raw=true "Civitai Model tab")
-Civitai Model aspect ratio
+### Civitai Model aspect ratio
 ![Civitai Model aspect ratio](images/aspect-ratio.jpeg?raw=true "Civitai Model aspect ratio")
+### Built in prompt generator
+![Civitai Model aspect ratio](images/prompt_generator.jpeg?raw=true "Prompt Generator")
 ## Contributing
 Feel free to contribute by submitting bug reports, feature requests, or even pull requests. Your input is highly appreciated!
 
